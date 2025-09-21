@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* styles.css */
+
+/* Dark Theme Variables */
+:root {
+  --bg-background: #0f111a;
+  --bg-surface: #1b1e2b;
+  --bg-hover-surface: #252734;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+
+  --color-primary: #7c3aed;
+  --color-secondary: #14b8a6;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  --divider: #2a2e3c;
+}
+
+/* Example Usage */
+body {
+  background-color: var(--bg-background);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--divider);
+  border-radius: 0.5rem; /* 8px rounded corners */
+
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: var(--bg-hover-surface);
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #6b21a8; /* Slightly darker shade of primary */
+}
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.alert-warning {
+  color: var(--color-warning);
+}
+
+.alert-error {
+  color: var(--color-error);
+}

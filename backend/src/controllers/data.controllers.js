@@ -1,7 +1,7 @@
 import xlsx from "xlsx";
 import axios from "axios";
 import { parseCvs, parsexlsx } from "../utils/parser.js";
-import { SHEET_DB } from "../config/index.js";
+import { SHEET_DB, GOOGLE_SHEET_URL } from "../config/index.js";
 
 export const uploadData = async (req, res) => {
   try {
@@ -152,6 +152,7 @@ export const syncData = async (req, res) => {
     res.json({
       message: "Data successfully synced to SheetDB",
       response: response.data,
+      sheetUrl: GOOGLE_SHEET_URL,
     });
   } catch (error) {
     console.error("Sync Error:", error.response?.data || error.message);
@@ -162,7 +163,7 @@ export const syncData = async (req, res) => {
   }
 };
 
-export const downloadData = async (req, res) => {
+export const downloadCsvData = async (req, res) => {
   try {
     const cleanedData = req.session.cleanedData;
     if (!cleanedData || !cleanedData.length) {
